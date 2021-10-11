@@ -7,10 +7,10 @@ from log import logger
 
 class Communication:
 
-    def __init__(self, port, bps, timex):
+    def __init__(self, port, bps, timeout):
         self.port = port
         self.bps = bps
-        self.timeout = timex
+        self.timeout = timeout
         #定义一个标签
         global nbool
 
@@ -20,6 +20,7 @@ class Communication:
             if self.ser.is_open:
                 nbool = True
         except Exception as e:
+            logger.error('打开串口并获取串口对象失败！')
             logger.error(e)
 
 
@@ -52,9 +53,13 @@ class Communication:
     #定义一个装饰器
     @staticmethod
     def print_used_port():
-        #可用串口列表
+        #获取可用串口
         port_list = list(serial.tools.list_ports.comports())
-        print(port_list)
+        if len(port_list) <= 0:
+            print('无可用串口！')
+        else:
+            print(port_list)
+
 
 if __name__ == '__main__':
-    com = Communication('COM7', 9600, 3)
+    com = Communication('COM7', 9600, 6)

@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ea2e78-3b7e-4420-a44d-0dde274a317b" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/interface/Inter_Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/inter_face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/ip_text.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/interface/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/port_package.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/port_package.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1zH4cii6J9l1lgZDBTSOaTeWLIW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
