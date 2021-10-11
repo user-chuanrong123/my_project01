@@ -11,7 +11,6 @@ DEFAULT_GORGE = 'COM7'
 #设置选择窗口大小
 SELSIZE = (15, 9)
 
-
 #设置波特率数组
 BAUD_ARRAY = ['1200', '2400', '9600', '19200', '38400', '115200']
 #设置波特率默认大小
@@ -33,13 +32,13 @@ SEND_DATA_SIZE=(16, 8)
 #设置右侧Frame框架大小
 FRAME_SIZE=(50, 6)
 
-
 ##############日志信息################
-
 import logging
-#默认的配置
-LOG_LEVEL = logging.ERROR  #设置默认等级
-#filename:指文件名称：这个日志是哪个文件输出的
+#设置默认等级
+LOG_LEVEL = logging.DEBUG
+#filename:指输出日志的文件名称
 LOG_FMT = '%(asctime)s %(filename)s [line:%(lineno)d] %(name)s: %(message)s'
-LOG_DATEFMT = '%Y-%m-%d %H:%M:%S' #默认时间格式
-LOG_FILENAME = 'gorge.log' #日志文件名称
+#默认时间格式
+LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
+#日志文件名称
+LOG_FILENAME = 'log.log'

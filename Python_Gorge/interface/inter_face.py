@@ -3,6 +3,7 @@
 """
 
 import PySimpleGUI as sg
+from log import logger
 from settings import GORGE_ARRAY
 from settings import DEFAULT_GORGE
 from settings import SELSIZE
@@ -51,3 +52,4 @@ while True:
     print(event)
     print(values)
 window.close()
+
