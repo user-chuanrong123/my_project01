@@ -17,12 +17,13 @@ from settings import DEFAULT_DATA_BIT
 from settings import DEFAULT_STOP_BIT
 from settings import SEND_DATA_SIZE
 from settings import FRAME_SIZE
+from settings import CHECKOUT
 
 #左侧框架设计
 frame_layout1 = [
 	    [sg.Text('串口号:', font=FONT_AND_SIZE), sg.Combo(GORGE_ARRAY, font=FONT_BUT_SIZE, key='-GORGE_NUMBER-', default_value=DEFAULT_GORGE, size=SELSIZE)],
 	    [sg.Text('波特率:', font=FONT_AND_SIZE), sg.Combo(BAUD_ARRAY, font=FONT_BUT_SIZE, key='-BAUD_NUMBER-', default_value=DEFAULT_SIZE, size=SELSIZE)],
-	    [sg.Text('校验位:', font=FONT_AND_SIZE), sg.Combo(['无校验位'], font=FONT_BUT_SIZE, key='-PARITY_BIT-', default_value='无校验位', size=SELSIZE)],
+	    [sg.Text('校验位:', font=FONT_AND_SIZE), sg.Combo(CHECKOUT, font=FONT_BUT_SIZE, key='-PARITY_BIT-', default_value=CHECKOUT, size=SELSIZE)],
 	    [sg.Text('数据位:', font=FONT_AND_SIZE), sg.Combo(DATA_BIT, font=FONT_BUT_SIZE, key='-DATA_BIT-', default_value=DEFAULT_DATA_BIT, size=SELSIZE)],
 	    [sg.Text('停止位:', font=FONT_AND_SIZE), sg.Combo(STOP_BIT, font=FONT_BUT_SIZE, key='-STOP_BIT-', default_value=DEFAULT_STOP_BIT, size=SELSIZE)],
 	    [sg.Button('打开串口', font=FONT_BUT_SIZE, key='-OPEN_BUTTEN-'), sg.Button('关闭串口', font=FONT_BUT_SIZE, key='-CLOSE_BUTTEN-')],
@@ -49,7 +50,8 @@ while True:
     event, values = window.read()
     if event==sg.WINDOW_CLOSED or event=='Exit':
         break
-    print(event)
-    print(values)
+	# elif event == '打开串口':
+	# 	pass
+
 window.close()
 

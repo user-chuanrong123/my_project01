@@ -1,9 +1,8 @@
-2021-10-11 17:20:03 port_package.py [line:23] root: Not a valid byte size: 3
-2021-10-11 17:21:18 port_package.py [line:23] root: Not a valid byte size: 3
-2021-10-11 17:25:27 port_package.py [line:23] root: Not a valid byte size: 3
-2021-10-12 00:25:24 port_package.py [line:23] root: Not a valid byte size: 3
-2021-10-12 00:25:48 port_package.py [line:23] root: could not open port 'COM7': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
-2021-10-12 00:26:18 port_package.py [line:23] root: could not open port 'COM7': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
-2021-10-12 00:28:15 port_package.py [line:24] root: could not open port 'COM7': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
-2021-10-12 00:28:57 port_package.py [line:23] root: 打开串口并获取串口对象失败！
-2021-10-12 00:28:57 port_package.py [line:24] root: could not open port 'COM7': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2021-10-12 17:43:56 port_package.py [line:25] root: 成功打开串口并创建对象！
+2021-10-12 17:43:57 port_package.py [line:68] root: 使用 serial.tools.list_ports.comports() 没有搜索到任何可用的串口！
+2021-10-12 17:44:54 port_package.py [line:25] root: 成功打开串口并创建对象！
+2021-10-12 17:44:54 port_package.py [line:67] root: 使用 serial.tools.list_ports.comports() 没有搜索到任何可用的串口！
+2021-10-12 17:45:08 port_package.py [line:24] root: 成功打开串口并创建对象！
+2021-10-12 17:45:09 port_package.py [line:66] root: 使用 serial.tools.list_ports.comports() 没有搜索到任何可用的串口！
+2021-10-12 17:45:39 port_package.py [line:24] root: 成功打开串口并创建对象！
+2021-10-12 17:45:39 port_package.py [line:66] root: 没有搜索到任何可用的串口！
