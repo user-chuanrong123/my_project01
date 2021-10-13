@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ea2e78-3b7e-4420-a44d-0dde274a317b" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/inter_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/inter_face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/interface/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/port_package.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/port_package.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
