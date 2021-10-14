@@ -1,6 +1,8 @@
 """
 串口调试界面
 """
+import datetime
+import time
 
 import PySimpleGUI as sg
 from log import logger
@@ -35,7 +37,7 @@ frame_layout1 = [
 
 #右侧框架设计
 frame_layout2 = [
-	[sg.Text('发送数据:', font=FONT_BUT_SIZE), sg.Button('清除发送数据', font=FONT_BUT_SIZE, key='-CLEAR-SENDDATA')],
+	[sg.Text('发送数据:', font=FONT_BUT_SIZE), sg.Button('清除发送数据', font=FONT_BUT_SIZE, key='-CLEAR_SENDDATA-')],
 	[sg.Listbox('', size=FRAME_SIZE, key='-PB2-')],
 	[sg.Text('接收数据:', font=FONT_BUT_SIZE), sg.Button('清除接收数据', font=FONT_BUT_SIZE, key='-CLEAR_RECIPT-')],
 	[sg.Listbox('', size=FRAME_SIZE, key='-PB3-')]
@@ -52,32 +54,50 @@ dict_butten = {
     '关闭串口':'-CLOSE_GORGE-',
     '发送':'-SEND_DATA-',
     '接收':'-RECIPT_DATA-',
-    '清除发送数据':'-CLEAR-SENDDATA',
+    '清除发送数据':'-CLEAR_SENDDATA-',
     '清除接收数据':'-CLEAR_RECIPT-',
 }
 
+#实例化通信类
 com = Communication('COM1', 9600, 6)
-
 while True:
     event, values = window.read()
     if event==sg.WINDOW_CLOSED or event=='Exit':
+        #退出
         break
+
     if event == '-OPEN_GORGE-':
+        #打开串口
         com.open_gorge()
+
     if event == '-CLOSE_GORGE-':
+        #关闭串口
         com.close_gorge()
+
     if event == '-SEND_DATA-':
+        #发送数据
+        templist = []
         result = com.send_messages(values['-INPUT_TEXT-'])
-        values['-PB2-'] = values['-INPUT_TEXT-']
-        window['-PB2-'].Update(values['-PB2-'])
+        templist.append(values['-INPUT_TEXT-'])
+        window['-PB2-'].update(templist)
+
     if event == '-RECIPT_DATA-':
-        pass
-    # if event == '-CLEAR-SENDDATA':
-    # if event == '-CLEAR_RECIPT-':
+        #接收数据
+        print("开始接收数据：")
+        while True:
+            # 一个字节一个字节的接收
+            if com.ser.in_waiting:
+                result = com.reception_messages_all()
+                window['-PB3-'].update(result)
+            else:
+                window['-PB3-'].update(['没有接收到任何数据'])
+                break
 
+    if event == '-CLEAR_SENDDATA-':
+        window['-PB2-'].update([])
 
-
-
+    if event == '-CLEAR_RECIPT-':
+        window['-PB3-'].update([])
     print(event)
     print(values)
 

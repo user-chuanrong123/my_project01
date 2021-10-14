@@ -83,6 +83,10 @@ class Communication:
         """功能函数：接收一行数据"""
         return self.ser.readline()
 
+    def reception_messages_all(self):
+        """功能函数：从端口接收所有数据"""
+        return self.ser.read_all()
+
 
 
 
