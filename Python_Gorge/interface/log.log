@@ -1,0 +1,26 @@
+2021-10-17 14:46:53 log.py [line:56] root: 11
+2021-10-17 14:46:53 log.py [line:57] root: 22
+2021-10-17 14:46:53 log.py [line:58] root: 33
+2021-10-17 14:46:53 log.py [line:59] root: 44
+2021-10-17 15:04:41 log.py [line:56] root: 11
+2021-10-17 15:04:41 log.py [line:57] root: 22
+2021-10-17 15:04:41 log.py [line:58] root: 33
+2021-10-17 15:04:41 log.py [line:59] root: 44
+2021-10-17 15:49:18 log.py [line:56] root: 11
+2021-10-17 15:49:18 log.py [line:57] root: 22
+2021-10-17 15:49:18 log.py [line:58] root: 33
+2021-10-17 15:49:18 log.py [line:59] root: 44
+2021-10-17 15:49:30 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 15:49:30 port_package.py [line:27] root: [Errno 2] could not open port COM1: [Errno 2] No such file or directory: 'COM1'
+2021-10-17 15:50:13 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 15:50:13 port_package.py [line:27] root: [Errno 2] could not open port COM1: [Errno 2] No such file or directory: 'COM1'
+2021-10-17 15:53:41 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 15:53:41 port_package.py [line:27] root: [Errno 2] could not open port COM1: [Errno 2] No such file or directory: 'COM1'
+2021-10-17 15:59:54 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 15:59:54 port_package.py [line:27] root: [Errno 2] could not open port COM1: [Errno 2] No such file or directory: 'COM1'
+2021-10-17 16:14:17 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 16:14:17 port_package.py [line:27] root: [Errno 2] could not open port None: [Errno 2] No such file or directory: 'None'
+2021-10-17 16:26:31 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 16:26:31 port_package.py [line:27] root: (22, 'Invalid argument')
+2021-10-17 17:05:51 port_package.py [line:26] root: 打开串口并获取串口对象失败！
+2021-10-17 17:05:51 port_package.py [line:27] root: (22, 'Invalid argument')

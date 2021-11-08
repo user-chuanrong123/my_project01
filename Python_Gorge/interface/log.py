@@ -5,7 +5,7 @@
 
 import logging
 import sys
-from settings import LOG_LEVEL,LOG_FMT,LOG_DATEFMT,LOG_FILENAME
+from Python_Gorge import settings
 
 
 class Logger(object):
@@ -14,12 +14,12 @@ class Logger(object):
         #1:获取一个logger对象
         self._logger = logging.getLogger()
         #定义日志输出格式
-        self.formatter = logging.Formatter(fmt=LOG_FMT, datefmt=LOG_DATEFMT)
+        self.formatter = logging.Formatter(fmt=settings.LOG_FMT, datefmt=settings.LOG_DATEFMT)
         #指定日志输出渠道
-        self._logger.addHandler(self._get_file_handler(LOG_FILENAME))
+        self._logger.addHandler(self._get_file_handler(settings.LOG_FILENAME))
         self._logger.addHandler(self._get_console_handler())
         #设置日志文件的等级
-        self._logger.setLevel(LOG_LEVEL)
+        self._logger.setLevel(settings.LOG_LEVEL)
 
 
     def _get_file_handler(self, filename):
@@ -48,12 +48,12 @@ class Logger(object):
 
 
 #初始化并配一个logger对象
-#使用时，直接导入logger就可用使用
+#使用时，直接导入logger就可用使用settings.py
+
 logger = Logger().logger
 
 if __name__ == '__main__':
-    logger.debug('调试信息')
-    logger.info('状态信息')
-    logger.warning('警告信息')
-    logger.error('错误信息')
-    logger.critical('严重错误信息')
+    logger.debug('11')
+    logger.info('22')
+    logger.warning('33')
+    logger.error('44')

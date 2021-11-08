@@ -1,32 +1,26 @@
-"""
-串口功能封装
-"""
+import sys
+
 import serial
-# import serial.tools.list_ports
-from log import logger
 import serial.tools.list_ports
 
-class Communication:
-    """通信类"""
+from _thread import start_new_thread
 
-    def __init__(self, port, bps, timeout):
+
+class Communication:
+    def __init__(self, port, bps):
         self.port = port
         self.bps = bps
-        self.timeout = timeout
-        #定义一个标签
-        global nbool
+        # self.port_list = []
+        self.flag = 1
+        self.nData1 = ''
 
-        #打开串口并得到串口对象
         try:
-            self.ser = serial.Serial(self.port, self.bps, self.timeout)
+            self.ser = serial.Serial(self.port, self.bps)
             if self.ser.is_open:
-                nbool = True
-                logger.info('成功打开串口并创建对象！')
+                print('init ---succeed')
         except Exception as e:
-            logger.error('打开串口并获取串口对象失败！')
-            logger.error(e)
-
-
+            print('init ---fail')
+            print(e)
 
     def print_name(self):
         """打印信息"""
@@ -43,55 +37,55 @@ class Communication:
         print(self.ser.dsrdtr)  # 硬件流控
         print(self.ser.interCharTimeout)  # 字符间隔超时
 
-
-
     def open_gorge(self):
         """打开串口"""
-        self.ser.open()
+        return self.ser.open()
 
 
     def close_gorge(self):
         """关闭串口"""
-        self.ser.close()
+        print('closing...')
+        return self.ser.close()
 
 
-    # @staticmethod
     def print_used_port(self):
         """获取可用串口"""
         port_list = list(serial.tools.list_ports.comports())
-        if port_list:
-            for i in range(len(port_list)):
-                print(port_list[i])
-        else:
-            logger.info('没有搜索到任何可用的串口！')
 
-
-
-
+        return port_list
 
     def send_messages(self, data):
         """发送数据"""
-        return self.ser.write(data.encode('UTF-8'))
+        f_number = self.ser.write(data.encode('UTF-8'))
+        return f_number
+
+    def thread_fun1(self):
+
+        while True:
+            if self.ser.in_waiting:
+                for i in range(self.ser.in_waiting):
+                    item = self.ser.read(1).hex()
+                    self.nData1 += ''.join(item)
+                    nData2 = int(self.nData1, 16)
+                    if nData2 == 'exit':
+                        break
+
+    def thread_fun2(self):
+
+        return self.nData1
 
 
-    def reception_messages_size(self, size):
-        """功能函数：接收指定字节大小得数据"""
-        return  self.ser.read(size=size)
+    def reception_messages_size(self):
+        """功能函数：接收数据"""
+        t1 = start_new_thread(self.thread_fun1, ())
+        t2 = start_new_thread(self.thread_fun2, ())
 
-
-    def reception_messages_line(self):
-        """功能函数：接收一行数据"""
-        return self.ser.readline()
-
-    def reception_messages_all(self):
-        """功能函数：从端口接收所有数据"""
-        return self.ser.read_all()
+        return self.thread_fun2()
 
 
 
 
 
 if __name__ == '__main__':
-    com = Communication('COM1', 9600, 5)
+    com = Communication('/dev/ttyUSB0', 9600)
     com.print_used_port()
-
